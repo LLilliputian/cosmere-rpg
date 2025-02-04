@@ -363,6 +363,11 @@ export class BaseItemSheet extends TabsApplicationMixin(
         await this.render(true);
     }
 
+    override changeTab(tab: string, group: string, options?: AnyObject): void {
+        this.updatingDescription = false;
+        super.changeTab(tab, group, options);
+    }
+
     /* --- Lifecycle --- */
 
     protected _onRender(context: AnyObject, options: AnyObject) {
